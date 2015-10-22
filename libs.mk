@@ -464,6 +464,7 @@ test_libvpx.$(VCPROJ_SFX): $(LIBVPX_TEST_SRCS) vpx.$(VCPROJ_SFX) gtest.$(VCPROJ_
             --exe \
             --target=$(TOOLCHAIN) \
             --name=test_libvpx \
+            $(if $(CONFIG_STATIC_MSVCRT),--static-crt) \
             -D_VARIADIC_MAX=10 \
             --proj-guid=CD837F5F-52D8-4314-A370-895D614166A7 \
             --ver=$(CONFIG_VS_VERSION) \
@@ -485,6 +486,7 @@ test_intra_pred_speed.$(VCPROJ_SFX): $(TEST_INTRA_PRED_SPEED_SRCS) vpx.$(VCPROJ_
             --exe \
             --target=$(TOOLCHAIN) \
             --name=test_intra_pred_speed \
+            $(if $(CONFIG_STATIC_MSVCRT),--static-crt) \
             -D_VARIADIC_MAX=10 \
             --proj-guid=CD837F5F-52D8-4314-A370-895D614166A7 \
             --ver=$(CONFIG_VS_VERSION) \
